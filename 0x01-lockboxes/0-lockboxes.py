@@ -1,7 +1,3 @@
-#!/usr/bin/python3
-""" Lockboxes challenge """
-
-
 def canUnlockAll(boxes):
     """
     Determine if all boxes can be opened.
@@ -24,7 +20,7 @@ def canUnlockAll(boxes):
             if 0 <= key < n:  # Check if the key is within valid range
 
                 if not visited[key]:  # If the box is unvisited
-                    visited[key] = True  # Mark the box as unvisited
+                    visited[key] = True  # Mark the box as visited
                     queue.append(key)  # Add the key to the queue
 
     return all(visited)  # Return True if all boxes are visited, else False
