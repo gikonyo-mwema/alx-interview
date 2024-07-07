@@ -1,3 +1,6 @@
+#!/usr/bin/python3
+""" Lockboxes Python challenge """
+
 def canUnlockAll(boxes):
     """
     Determine if all boxes can be opened.
