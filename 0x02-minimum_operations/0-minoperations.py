@@ -1,21 +1,30 @@
 #!/usr/bin/python3
-""" Minumun Operations """
+"""
+File:
+0x03-minimum_operations/0-minoperations.py
+
+Since I can't figure out the math or pattern,
+I decided to redo this and just make a string.
+
+I'm literally duplicating the "copy" and "paste process.
+"""
 
 
 def minOperations(n):
     """
-    calculates the fewest number of operations needed,
-    to result in exactly n H characters in the file.
+    Calculates the fewest number of operations needed
     """
-    current_h = 1
-    operations = 0
-    while current_h < n:
-        if n % current_h == 0:
-            # Use Copy All and Paste to double the count
-            current_h *= 2
-            operations += 1
-        else:
-            # Increment by 1 using Paste
-            current_h += 1
-            operations += 1
-    return operations
+    end_str = "H"
+    copy_str = ""
+
+    str_len = 1
+    oper_total = 0
+
+    while str_len < n:
+        if n % str_len == 0:
+            copy_str = end_str  # copy
+            oper_total += 1
+        end_str += copy_str     # paste
+        str_len = len(end_str)
+        oper_total += 1
+    return oper_total
